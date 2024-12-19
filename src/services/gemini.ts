@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const API_KEY = 'AIzaSyAJuH2twbTuWHsK39qFGVeMRDNHuvDu1zA';
+const API_KEY = '';
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 export async function getGeminiResponse(imageBase64: string): Promise<string> {
