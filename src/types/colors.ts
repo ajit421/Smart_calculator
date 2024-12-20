@@ -11,6 +11,6 @@ export const colorPalette = [
   '#8BC34A', // light green
   '#FFD700', // yellow
   '#FF8C00'  // orange
-] as const;
+];
 
-export type ColorType = typeof colorPalette[number];
+export type ColorType = (typeof colorPalette)[number];

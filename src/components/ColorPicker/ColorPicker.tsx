@@ -4,7 +4,7 @@ import { ColorPalette } from '../ColorPalette/ColorPalette';
 import type { ColorType } from '../../types/colors';
 
 interface ColorPickerProps {
-  colors: ColorType[];
+  colors: readonly ColorType[];
   selectedColor: ColorType;
   onColorSelect: (color: ColorType) => void;
   onReset: () => void;

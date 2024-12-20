@@ -4,7 +4,7 @@ export class BaseApi {
   protected async fetchWithRetry(
     url: string,
     options: RequestInit,
-    retries = REQUEST_CONFIG.MAX_RETRIES
+    retries: number = REQUEST_CONFIG.MAX_RETRIES
   ): Promise<Response> {
     try {
       const response = await fetch(url, options);

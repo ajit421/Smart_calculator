@@ -3,7 +3,7 @@ import { ColorButton } from '../ColorButton/ColorButton';
 import type { ColorType } from '../../types/colors';
 
 interface ColorPaletteProps {
-  colors: ColorType[];
+  colors: readonly ColorType[];
   selectedColor: ColorType;
   onColorSelect: (color: ColorType) => void;
 }

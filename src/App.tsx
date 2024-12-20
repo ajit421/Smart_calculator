@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { ColorPicker } from './components/ColorPicker/ColorPicker';
-import { ColorDisplay } from './components/ColorDisplay/ColorDisplay';
 import { Canvas, type CanvasRef } from './components/Canvas/Canvas';
 import { DrawingTools } from './components/DrawingTools/DrawingTools';
 import { ResponseDisplay } from './components/ResponseDisplay/ResponseDisplay';
@@ -27,7 +26,7 @@ function App() {
   const handleCalculate = async () => {
     const canvas = canvasRef.current?.getCanvas();
     if (!canvas) return;
-
+    
     const imageData = canvas.toDataURL('image/png');
     await analyzeImage(imageData);
   };
@@ -35,11 +34,11 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-3xl">
-        <h1 className="text-3xl font-bold mb-8 text-gray-800">Smart calculator</h1>
-
-        <ColorPicker
+        <h1 className="text-3xl font-bold mb-8 text-gray-800">Drawing Board</h1>
+        
+        <ColorPicker 
           colors={colorPalette}
-          selectedColor={selectedColor}
+          selectedColor={selectedColor} 
           onColorSelect={setSelectedColor}
           onReset={handleReset}
         />
@@ -50,27 +49,22 @@ function App() {
           onClear={handleClearCanvas}
           onCalculate={handleCalculate}
         />
-
-        <Canvas
+        
+        <Canvas 
           ref={canvasRef}
-          color={selectedColor}
-          strokeWidth={strokeWidth}
+          color={selectedColor} 
+          strokeWidth={strokeWidth} 
         />
-
-        <ResponseDisplay
-          response={response}
+        
+        <ResponseDisplay 
+          response={response} 
           error={error}
-          isLoading={isLoading}
+          isLoading={isLoading} 
         />
-
+        
         <div className="mt-3">
-          <p className="text-gray-400">
-            This is a simple smart calculator application built with React, TypeScript, and Tailwind CSS.
-          </p>
-
-          <p className="text-gray-900">
-            Developed by <a href="https://github.com/ajit421" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Ajit kumar</a>
-          </p>
+          <p className="text-gray-400">This is a simple smart calculator application built with React, TypeScript, and Tailwind CSS.</p>
+          <p className="text-gray-900">Developed by <a href="https://github.com/ajit421" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Ajit kumar</a></p>
         </div>
       </div>
     </div>
