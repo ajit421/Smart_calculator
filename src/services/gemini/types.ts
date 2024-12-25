@@ -25,3 +25,11 @@ export interface GeminiImagePart {
     mimeType: string;
   };
 }
+
+export interface GeminiConfig {
+  apiKey: string;
+  model: string;
+  maxRetries: number;
+  retryDelay: number;
+  timeout: number;
+}

@@ -14,16 +14,18 @@ export const ResponseDisplay: React.FC<ResponseDisplayProps> = ({
   if (isLoading) {
     return (
       <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <div className="animate-pulse flex space-x-4">
-          <div className="flex-1 space-y-4 py-1">
-            <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-            <div className="space-y-2">
-              <div className="h-4 bg-gray-200 rounded"></div>
-              <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div className="flex flex-col items-center space-y-4">
+    {/* Spinner Animation */}
+    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-600"></div>
+    <p className="text-gray-800">
+      <span style={{ color: "green" }}>Analyzing... Please wait</span>
+    </p>
+  </div>
+</div>
+
+      // <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+       //   <div className="flex items-center space-x-2">
+       //     <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-gray-600"></div>
     );
   }
 

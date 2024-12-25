@@ -17,13 +17,15 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
   onReset
 }) => {
   return (
-    <div className="flex gap-4 p-4 bg-gray-100 rounded-lg items-center">
+    <div className="flex flex-col sm:flex-row gap-4 p-4 bg-gray-100 rounded-lg">
       <ResetButton onClick={onReset} />
-      <ColorPalette
-        colors={colors}
-        selectedColor={selectedColor}
-        onColorSelect={onColorSelect}
-      />
+      <div className="flex-1 overflow-x-auto">
+        <ColorPalette
+          colors={colors}
+          selectedColor={selectedColor}
+          onColorSelect={onColorSelect}
+        />
+      </div>
     </div>
   );
 };

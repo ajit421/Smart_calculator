@@ -16,20 +16,22 @@ export const DrawingTools: React.FC<DrawingToolsProps> = ({
   onCalculate,
 }) => {
   return (
-    <div className="flex items-center justify-between p-4 bg-gray-100 rounded-lg mb-4">
-      <div className="flex items-center gap-4">
+    <div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-gray-100 rounded-lg">
+      <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
         <StrokeWidthControl
           strokeWidth={strokeWidth}
           onStrokeWidthChange={onStrokeWidthChange}
         />
         <button
           onClick={onClear}
-          className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+          className="w-full sm:w-auto px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
         >
           Clear Canvas
         </button>
       </div>
-      <CalculateButton onClick={onCalculate} />
+      <div className="w-full sm:w-auto">
+        <CalculateButton onClick={onCalculate} />
+      </div>
     </div>
   );
 };
