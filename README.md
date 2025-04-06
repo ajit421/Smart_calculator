@@ -1,5 +1,6 @@
 
 # Smart Calculator
+## 🔗 Live Demo: https://smart-cal.netlify.app
 
 A modern web application that combines the power of Optical Character Recognition (OCR) with mathematical expression evaluation. Built using React, TypeScript, and Tailwind CSS, it allows users to draw mathematical expressions on a canvas, extracts those expressions using Tesseract.js, evaluates them with mathjs, and displays the result.
 
